@@ -79,5 +79,7 @@
     "vuepress": "^1.5.2",
     "vuepress-theme-default-vue-a11y": "^0.1.14"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vue-focus-lock": "^1.4.0"
+  }
 }

@@ -1,0 +1,9 @@
+:root {
+  --vsc-bg-header: #fcfcfc;
+  --vsc-text-color-header: inherit;
+  --vsc-bg-button: #333;
+  --vsc-bg-hover-button: #555;
+  --vsc-text-color-button: white;
+  --vsc-outline-color: #41b883;
+  --vsc-border-default: 1px solid #f3f3f3;
+}
