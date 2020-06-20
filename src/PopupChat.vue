@@ -15,40 +15,7 @@
           <slot name="header" />
         </div>
         <div class="vsc-popup-body">
-          <slot name="body">
-            <ul class="vsc-popup-body__list">
-              <li
-                v-for="(support, index) in team"
-                :key="`vsc-item-${index}`"
-                class="vsc-popup-body__list-item"
-              >
-                <a
-                  :href="support.href"
-                  rel="noopener"
-                  target="_blank"
-                  class="vsc-popup-body__link"
-                  :aria-label="`Contact ${support.name}, opens in a new window`"
-                >
-                  <div class="vsc-popup-body__link-avatar">
-                    <img
-                      :src="support.avatar.src"
-                      :alt="support.avatar.alt"
-                    >
-                  </div>
-                  <div class="vsc-popup-body__link-info">
-                    <span
-                      class="vsc-popup-body__link-info__label"
-                      v-text="support.label"
-                    />
-                    <span
-                      class="vsc-popup-body__link-info__name"
-                      v-text="support.name"
-                    />
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </slot>
+          <slot name="body" />
         </div>
         <div
           v-show="$slots.footer"
@@ -76,11 +43,10 @@
                 width="28"
                 height="28"
                 fill="currentColor"
-                viewBox="0 0 511.3 511.3"
               >
                 <defs />
-                <path d="M362.3 165.3H149a21 21 0 100 42h213.3a21 21 0 100-42zM309 250.7H149a21 21 0 100 42h160a21 21 0 100-42z" />
-                <path d="M488.6 61.3a21 21 0 00-12.2-12C397 19.4 115.3 19 35 49.4a21 21 0 00-12.1 12C21.8 63.7 0 120.8 0 229s21.9 165.3 22.8 167.6a21 21 0 0012.1 12c1.8.7 44 16.3 151.8 21.2l55 49.5a21 21 0 0028 0l55-49.5c107.7-4.9 150-20.5 151.7-21.2a21 21 0 0012.2-12c.9-2.3 22.7-59.4 22.7-167.6S489.5 63.7 488.6 61.3zM452.4 372c-17.2 4.4-59.8 13.1-137 16.2a21 21 0 00-13.2 5.4l-46.5 41.8-46.5-41.8a21 21 0 00-13.3-5.4C118.7 385 76.2 376.4 59 372c-22.6-78-22.5-208.4 0-286 90.7-23.2 303-23.2 393.5 0 22.6 77.7 22.6 208 0 286z" />
+                <path d="M28 13.43A13.75 13.75 0 0014 0 13.75 13.75 0 000 13.43v.03a13.21 13.21 0 004.4 9.77v3.38A1.37 1.37 0 005.76 28a1.36 1.36 0 00.72-.21l2.72-1.7a14.37 14.37 0 004.76.8H14.26A13.75 13.75 0 0028 13.48v-.04zm-5.37 8.47a12.03 12.03 0 01-8.61 3.36H14a12.73 12.73 0 01-4.42-.78 1.2 1.2 0 00-1.06.1l-2.48 1.56v-3.11a1.2 1.2 0 00-.42-.9 11.57 11.57 0 01-3.98-8.67A12.1 12.1 0 0113.98 1.64h.04a12.1 12.1 0 0112.34 11.81 12.03 12.03 0 01-3.73 8.45zm0 0" />
+                <path d="M20.02 9.53H7.98a.82.82 0 000 1.64h12.04a.82.82 0 100-1.64zm0 0M20.02 13.16H7.98a.82.82 0 000 1.65h12.04a.82.82 0 100-1.65zm0 0M20.02 16.8H14.1a.82.82 0 000 1.64h5.92a.82.82 0 100-1.65zm0 0" />
               </svg>
             </slot>
           </span>
@@ -119,10 +85,6 @@ export default {
     icon: {
       type: Boolean,
       default: true
-    },
-    team: {
-      type: Array,
-      default: () => ([])
     }
   },
 
@@ -183,6 +145,8 @@ export default {
     text-align: left
     padding: 22px 30px
     border-bottom: var(--vsc-border-default)
+    background-color: var(--vsc-bg-header)
+    color: var(--vsc-text-color-header)
 
   &-body
     padding: 16px
@@ -236,6 +200,8 @@ export default {
   &-footer
     padding: 16px
     border-top: var(--vsc-border-default)
+    background-color: var(--vsc-bg-footer)
+    color: var(--vsc-text-color-footer)
 
   &-button
     outline: none
@@ -269,10 +235,6 @@ export default {
 
     &:focus
       box-shadow: 0 0 0 3px var(--vsc-outline-color)
-
-.vsc-popup-header, .vsc-popup-footer
-  background-color: var(--vsc-bg-header)
-  color: var(--vsc-text-color-header)
 
 @media (prefers-reduced-motion) {
   .vsc-popup * {
