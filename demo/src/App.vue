@@ -6,7 +6,7 @@
     >
     <HelloWorld msg="Welcome to Your Vue.js App" />
 
-    <PopupChat :team="team">
+    <WhatsAppChat :attendants="attendants">
       <template v-slot:header>
         <h3>Hello!</h3>
         <p>Click one of our representatives below to chat on WhatsApp or send us an email to <a href="mailto:hello@quadlayers.com">hello@quadlayers.com</a></p>
@@ -14,20 +14,22 @@
       <template v-slot:footer>
         <a href="mailto:hello@quadlayers.com">hello@quadlayers.com</a>
       </template>
-    </PopupChat>
+    </WhatsAppChat>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import { WhatsAppChat } from '../vue-social-chat'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    WhatsAppChat
   },
   data: () => ({
-    team: [
+    attendants: [
       {
         label: 'Support',
         name: 'Alan Albuquerque',
