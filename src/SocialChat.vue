@@ -174,6 +174,8 @@ $waColor = #46c056
   &-body
     padding: 14px
     background-color: white
+    max-height: 300px
+    overflow: auto
 
     &__list
       list-style: none
