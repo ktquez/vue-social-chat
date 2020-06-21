@@ -73,7 +73,7 @@ export default {
   props: {
     icon: {
       type: Boolean,
-      default: true
+      default: false
     },
     attendants: {
       type: Array,
