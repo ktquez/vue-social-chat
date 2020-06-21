@@ -107,14 +107,14 @@ export default {
 
   watch: {
     show (val) {
-      if (val) {
-        document.addEventListener('click', this.closeClickOutside)
-        document.addEventListener('keydown', this.closeKeydownEsc)
-        return
-      }
-      document.removeEventListener('click', this.closeClickOutside)
-      document.removeEventListener('keydown', this.closeKeydownEsc)
+      if (!val) return this.removeEventListeners()
+      document.addEventListener('click', this.closeClickOutside)
+      document.addEventListener('keydown', this.closeKeydownEsc)
     }
+  },
+
+  beforeDestroy () {
+    this.removeEventListeners()
   },
 
   methods: {
@@ -136,6 +136,11 @@ export default {
 
     closeKeydownEsc ({ which }) {
       if (which === 27) this.togglePopup()
+    },
+
+    removeEventListeners () {
+      document.removeEventListener('click', this.closeClickOutside)
+      document.removeEventListener('keydown', this.closeKeydownEsc)
     }
   }
 }
