@@ -44,6 +44,7 @@
         <slot
           v-if="!show || !icon"
           name="icon"
+          :open="show"
         >
           <chatIcon />
         </slot>
