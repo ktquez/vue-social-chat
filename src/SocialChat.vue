@@ -19,7 +19,7 @@
           <slot name="body">
             <ListChat
               :url-asset="urlAssets"
-              :attendants="attendants"
+              :attendants="getAttendants"
             />
           </slot>
         </div>
@@ -66,7 +66,7 @@
 <script>
 import ListChat from './ListChat.vue'
 import FocusLock from 'vue-focus-lock'
-import { URL_ASSETS } from './constants'
+import { URL_ASSETS, HREF_BY_APP } from './constants'
 
 export default {
   name: 'VueSocialChat',
@@ -95,6 +95,13 @@ export default {
   computed: {
     ariaLabelButton () {
       return `${this.show ? 'Close' : 'Open'} social support widget`
+    },
+
+    getAttendants () {
+      return this.attendants.map(attendant => {
+        const href = attendant.app ? HREF_BY_APP[attendant.app].replace('%ph%', (attendant.number || attendant.id || attendant.username)) : attendant.href
+        return { ...attendant, href }
+      })
     }
   },
 

@@ -21,7 +21,9 @@ export default {
       css: true,
       compileTemplate: true
     }),
-    buble()
+    buble({
+      objectAssign: true
+    })
   ],
   output: [
     {

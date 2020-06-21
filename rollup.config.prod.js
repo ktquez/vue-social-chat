@@ -21,7 +21,9 @@ export default commandLineArgs => {
           optimizeSSR: commandLineArgs.format === 'cjs'
         }
       }),
-      buble(),
+      buble({
+        objectAssign: true
+      }),
       commandLineArgs.format === 'iife' && terser()
     ],
     output: {
