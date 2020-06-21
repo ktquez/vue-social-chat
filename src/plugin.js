@@ -1,9 +1,9 @@
-import PopupChat from './PopupChat.vue'
+import SocialChat from './SocialChat.vue'
 
 export default function install (Vue) {
   if (install.installed) return
   install.installed = true
-  Vue.component('PopupChat', PopupChat)
+  Vue.component('SocialChat', SocialChat)
 }
 
 // auto install
