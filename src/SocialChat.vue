@@ -3,6 +3,7 @@
     <div
       ref="vscPopup"
       class="vsc-popup"
+      :dir="dir"
     >
       <div
         id="vsc-popup-box"
@@ -81,9 +82,15 @@ export default {
       type: Boolean,
       default: false
     },
+
     attendants: {
       type: Array,
       default: () => ([])
+    },
+
+    dir: {
+      type: String,
+      default: 'ltr'
     }
   },
 
@@ -175,6 +182,20 @@ $bgButton = #333
   max-width: 380px
   -webkit-font-smoothing: antialiased
 
+  &[dir="rtl"]
+    left: 20px
+    right: auto
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-end
+
+    .vsc-popup-box
+      transform-origin: bottom left
+
+    .vsc-popup-body .vsc-popup-body__link-info
+      padding-left: 0
+      padding-right: 10px
+
   &-box
     transition: transform .3s ease-in-out, opacity .2s, visibility .2s
     transform-origin: bottom right
@@ -194,7 +215,6 @@ $bgButton = #333
       opacity: 1
 
   &-header
-    text-align: left
     padding: 22px 18px
     border-bottom: var(--vsc-border-default)
     background-color: var(--vsc-bg-header)
@@ -259,7 +279,6 @@ $bgButton = #333
 
         > span
           display: block
-          text-align: left
 
         &__label
           font-size: 12px
