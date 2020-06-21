@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import chokidar from 'chokidar'
 import { eslint } from 'rollup-plugin-eslint'
 import vue from 'rollup-plugin-vue'
+import svg from 'rollup-plugin-vue-inline-svg'
 
 export default {
   input: 'src/index.js',
@@ -14,8 +15,10 @@ export default {
   plugins: [
     commonjs(),
     resolve(),
+    svg(),
     eslint({
-      include: './src/**'
+      include: './src/**',
+      exclude: ['node_modules/**', 'src/icons/**']
     }),
     vue({
       css: true,

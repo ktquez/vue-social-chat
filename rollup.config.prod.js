@@ -3,12 +3,15 @@ import commonjs from '@rollup/plugin-commonjs'
 import replace from '@rollup/plugin-replace'
 import { terser } from 'rollup-plugin-terser'
 import vue from 'rollup-plugin-vue'
+import svg from 'rollup-plugin-vue-inline-svg'
 
 export default commandLineArgs => {
   return {
     input: 'src/index.js',
+    external: ['vue-focus-lock'],
     plugins: [
       commonjs(),
+      svg(),
       replace({
         'process.env.NODE_ENV': JSON.stringify('production')
       }),
@@ -25,7 +28,10 @@ export default commandLineArgs => {
     ],
     output: {
       name: 'VueSocialChat',
-      exports: 'named'
+      exports: 'named',
+      globals: {
+        'vue-focus-lock': 'FocusLock'
+      }
     }
   }
 }
