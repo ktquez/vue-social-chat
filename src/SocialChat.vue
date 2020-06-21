@@ -7,7 +7,7 @@
     >
       <transition name="scale">
         <div
-          v-if="show"
+          v-show="show"
           id="vsc-popup-box"
           class="vsc-popup-box"
         >
