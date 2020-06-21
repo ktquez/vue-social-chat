@@ -5,32 +5,34 @@
       class="vsc-popup"
       :dir="dir"
     >
-      <div
-        id="vsc-popup-box"
-        class="vsc-popup-box"
-        :class="{ 'vsc-popup-box--show': show }"
-      >
+      <transition name="scale">
         <div
-          v-show="$slots.header"
-          class="vsc-popup-header"
+          v-if="show"
+          id="vsc-popup-box"
+          class="vsc-popup-box"
         >
-          <slot name="header" />
+          <div
+            v-show="$slots.header"
+            class="vsc-popup-header"
+          >
+            <slot name="header" />
+          </div>
+          <div class="vsc-popup-body">
+            <slot name="body">
+              <ListChat
+                :url-asset="urlAssets"
+                :attendants="getAttendants"
+              />
+            </slot>
+          </div>
+          <div
+            v-show="$slots.footer"
+            class="vsc-popup-footer"
+          >
+            <slot name="footer" />
+          </div>
         </div>
-        <div class="vsc-popup-body">
-          <slot name="body">
-            <ListChat
-              :url-asset="urlAssets"
-              :attendants="getAttendants"
-            />
-          </slot>
-        </div>
-        <div
-          v-show="$slots.footer"
-          class="vsc-popup-footer"
-        >
-          <slot name="footer" />
-        </div>
-      </div>
+      </transition>
       <button
         class="vsc-popup-button vsc-popup-button--default"
         :class="{ 'vsc-popup-button--no-icon': !icon }"
@@ -133,8 +135,10 @@ export default {
     },
 
     focusFirstLink () {
-      const link = this.$refs.vscPopup.querySelector('a')
-      if (link) setTimeout(() => link.focus(), 200)
+      this.$nextTick(() => {
+        const link = this.$refs.vscPopup.querySelector('a')
+        if (link) setTimeout(() => link.focus(), 200)
+      })
     },
 
     closeClickOutside ({ target }) {
@@ -180,6 +184,7 @@ $bgButton = #333
   flex-wrap: wrap
   justify-content: flex-end
   max-width: 380px
+  margin-left: 20px
   -webkit-font-smoothing: antialiased
 
   &[dir="rtl"]
@@ -199,9 +204,7 @@ $bgButton = #333
   &-box
     transition: transform .3s ease-in-out, opacity .2s, visibility .2s
     transform-origin: bottom right
-    transform: scale3d(0,0,0)
-    opacity: 0
-    visibility: hidden
+    transform: scale3d(1,1,1)
     border-radius: 10px
     margin-bottom: 10px
     box-shadow: 0 5px 25px -5px rgba(45,62,79,0.15)
@@ -209,10 +212,8 @@ $bgButton = #333
     border: var(--vsc-border-default)
     overflow: hidden
 
-    &--show
-      transform: scale3d(1,1,1)
-      visibility: visible
-      opacity: 1
+  .scale-enter, .scale-leave-active
+    transform: scale3d(0,0,0)
 
   &-header
     padding: 22px 18px
