@@ -23,7 +23,7 @@
     "test:unit": "jest",
     "test:e2e": "node_modules/.bin/cypress run --headless",
     "test:e2e:open": "node_modules/.bin/cypress open ",
-    "project:publish": "git push --tags origin master && npm run build && npm publish --access public"
+    "project:publish": "git push --tags origin master && npm run build && npm publish"
   },
   "repository": {
     "type": "git",
@@ -73,7 +73,6 @@
     "rollup-plugin-eslint": "^7.0.0",
     "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-vue": "^5.1.9",
-    "rollup-plugin-vue-inline-svg": "^1.1.1",
     "standard-version": "^8.0.0",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11",

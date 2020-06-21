@@ -7,9 +7,7 @@
       <div
         id="vsc-popup-box"
         class="vsc-popup-box"
-        :class="{
-          'vsc-popup-box--show': show
-        }"
+        :class="{ 'vsc-popup-box--show': show }"
       >
         <div
           v-show="$slots.header"
@@ -19,7 +17,10 @@
         </div>
         <div class="vsc-popup-body">
           <slot name="body">
-            <ListChat :attendants="attendants" />
+            <ListChat
+              :url-asset="urlAssets"
+              :attendants="attendants"
+            />
           </slot>
         </div>
         <div
@@ -31,9 +32,7 @@
       </div>
       <button
         class="vsc-popup-button vsc-popup-button--default"
-        :class="{
-          'vsc-popup-button--no-icon': !icon
-        }"
+        :class="{ 'vsc-popup-button--no-icon': !icon }"
         aria-haspopup="true"
         aria-controls="vsc-popup-box"
         aria-expanded="false"
@@ -46,28 +45,34 @@
             name="icon"
             :open="show"
           >
-            <chatIcon />
+            <img
+              :src="`${urlAssets}/icons/chat.svg`"
+              alt="chat icon"
+              aria-hidden="true"
+            >
           </slot>
         </span>
-        <closeIcon v-show="show && icon" />
+        <img
+          v-show="show && icon"
+          :src="`${urlAssets}/icons/close.svg`"
+          alt="close icon"
+          aria-hidden="true"
+        >
       </button>
     </div>
   </FocusLock>
 </template>
 
 <script>
-import chatIcon from './icons/chat.svg'
-import closeIcon from './icons/close.svg'
 import ListChat from './ListChat.vue'
 import FocusLock from 'vue-focus-lock'
+import { URL_ASSETS } from './constants'
 
 export default {
   name: 'VueSocialChat',
 
   components: {
-    chatIcon,
     ListChat,
-    closeIcon,
     FocusLock
   },
 
@@ -83,7 +88,8 @@ export default {
   },
 
   data: () => ({
-    show: false
+    show: false,
+    urlAssets: URL_ASSETS
   }),
 
   computed: {
