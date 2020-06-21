@@ -19,7 +19,7 @@
           >
           <span
             class="vsc-popup-body__link-avatar-brand"
-            :style="props.logo ? `background-image: url(https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src/logos/${props.logo}.png)` : ''"
+            :style="attendant.app ? `background-image: url(https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src/logos/${attendant.app}.png)` : ''"
           />
         </div>
         <div class="vsc-popup-body__link-info">
@@ -42,10 +42,6 @@ export default {
   name: 'ListChat',
 
   props: {
-    logo: {
-      type: String,
-      default: null
-    },
     attendants: {
       type: Array,
       default: () => ([])
