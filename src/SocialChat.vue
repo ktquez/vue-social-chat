@@ -43,10 +43,13 @@
           :title="ariaLabelButton"
           @click="togglePopup"
         >
-          <slot name="icon">
-            <chatIcon v-show="!show" />
-            <closeIcon v-show="show" />
+          <slot
+            v-if="!show || !icon"
+            name="icon"
+          >
+            <chatIcon />
           </slot>
+          <closeIcon v-show="show && icon" />
         </button>
       </div>
     </div>
