@@ -3,7 +3,6 @@
     <div
       ref="vscPopup"
       class="vsc-popup"
-      :class="classNameApp"
     >
       <div
         id="vsc-popup-box"
@@ -30,28 +29,26 @@
           <slot name="footer" />
         </div>
       </div>
-      <div>
-        <button
-          class="vsc-popup-button vsc-popup-button--default"
-          :class="{
-            'vsc-popup-button--no-icon': !icon
-          }"
-          aria-haspopup="true"
-          aria-controls="vsc-popup-box"
-          aria-expanded="false"
-          :aria-label="ariaLabelButton"
-          :title="ariaLabelButton"
-          @click="togglePopup"
+      <button
+        class="vsc-popup-button vsc-popup-button--default"
+        :class="{
+          'vsc-popup-button--no-icon': !icon
+        }"
+        aria-haspopup="true"
+        aria-controls="vsc-popup-box"
+        aria-expanded="false"
+        :aria-label="ariaLabelButton"
+        :title="ariaLabelButton"
+        @click="togglePopup"
+      >
+        <slot
+          v-if="!show || !icon"
+          name="icon"
         >
-          <slot
-            v-if="!show || !icon"
-            name="icon"
-          >
-            <chatIcon />
-          </slot>
-          <closeIcon v-show="show && icon" />
-        </button>
-      </div>
+          <chatIcon />
+        </slot>
+        <closeIcon v-show="show && icon" />
+      </button>
     </div>
   </FocusLock>
 </template>
@@ -73,10 +70,6 @@ export default {
   },
 
   props: {
-    app: {
-      type: String,
-      default: null
-    },
     icon: {
       type: Boolean,
       default: true
@@ -92,10 +85,6 @@ export default {
   }),
 
   computed: {
-    classNameApp () {
-      return `vsc-${this.app || 'default'}`
-    },
-
     ariaLabelButton () {
       return `${this.show ? 'Close' : 'Open'} social support widget`
     }
@@ -119,7 +108,6 @@ export default {
 <style lang="stylus">
 $bg = #333
 $bgButton = #333
-$waColor = #46c056
 
 :root
   --vsc-bg-header: $bg
@@ -130,9 +118,6 @@ $waColor = #46c056
   --vsc-text-color-button: white
   --vsc-outline-color: #333
   --vsc-border-default: 1px solid #f3f3f3
-
-.vsc-whatsapp.vsc-popup
-  --vsc-bg-button: $waColor
 
 .vsc-popup *
   box-sizing: border-box
@@ -169,7 +154,7 @@ $waColor = #46c056
 
   &-header
     text-align: left
-    padding: 22px 30px
+    padding: 22px 18px
     border-bottom: var(--vsc-border-default)
     background-color: var(--vsc-bg-header)
     color: var(--vsc-text-color-header)
@@ -194,7 +179,7 @@ $waColor = #46c056
     &__link
       outline: none;
       display: flex
-      padding: 10px 14px
+      padding: 10px 18px
       text-decoration: none
       color: #333
       letter-spacing: .2px
@@ -243,7 +228,6 @@ $waColor = #46c056
           margin-top: 2px
 
   &-footer
-    text-align: center
     padding: 16px
     border-top: var(--vsc-border-default)
     background-color: var(--vsc-bg-footer)
@@ -263,7 +247,7 @@ $waColor = #46c056
     height: 60px
     display: inline-block
     padding-top: 2px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.3)
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2)
     font-family: inherit
     transition: background-color .3s, box-shadow .2s
 
