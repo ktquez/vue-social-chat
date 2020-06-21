@@ -1,61 +1,70 @@
 <template>
   <div id="app">
-    <img
-      alt="Vue logo"
-      src="./assets/logo.png"
-    >
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-
-    <WhatsAppChat :attendants="attendants">
-      <template v-slot:header>
-        <h3>Hello!</h3>
-        <p>Click one of our representatives below to chat on WhatsApp or send us an email to <a href="mailto:hello@quadlayers.com">hello@quadlayers.com</a></p>
-      </template>
-      <template v-slot:footer>
-        <a href="mailto:hello@quadlayers.com">hello@quadlayers.com</a>
-      </template>
-    </WhatsAppChat>
+    <h1>
+      Vue social chat
+    </h1>
+    <nav>
+      <h2>Click to chat (Demos))</h2>
+      <ul>
+        <li
+          v-for="chat in chats"
+          :key="chat.label"
+        >
+          <router-link :to="chat.path">
+            <span class="sr-only">See chat demo</span> {{ chat.label }}
+          </router-link>
+        </li>
+      </ul>
+    </nav>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import { WhatsAppChat } from '../vue-social-chat'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
-    WhatsAppChat
-  },
+
   data: () => ({
-    attendants: [
+    chats: [
       {
-        label: 'Support',
-        name: 'Alan Albuquerque',
-        href: 'https://web.whatsapp.com/send?phone=5581983383532&text=',
-        avatar: {
-          src: 'https://avatars0.githubusercontent.com/u/8084606?s=460&u=20b6499a416cf7129a18e5c168cf387e159edb1a&v=4',
-          alt: 'Avatar Support Alan Albuquerque'
-        }
+        label: 'Whatsapp',
+        path: '/whatsapp'
       },
       {
-        label: 'Support TI',
-        name: 'Rodrigo Pombo',
-        href: 'https://web.whatsapp.com/send?phone=5581983383532&text=',
-        avatar: {
-          src: 'https://avatars3.githubusercontent.com/u/1911623?s=460&u=e229be53a0816de373a668ad8f74e20b30c056c8&v=4',
-          alt: 'Avatar Support Rodrigo Pombo'
-        }
+        label: 'Telegram',
+        path: '/telegram'
       },
       {
-        label: 'Human Resources',
-        name: 'April Gonçalves',
-        href: 'https://web.whatsapp.com/send?phone=5581983383532&text=',
-        avatar: {
-          src: 'https://avatars3.githubusercontent.com/u/609862?s=400&u=e58f7e1a6a5e5ce21979a183db43870582ffcde4&v=4',
-          alt: 'Avatar Support April Gonçalves'
-        }
+        label: 'Messeger',
+        path: '/messeger'
+      },
+      {
+        label: 'WeChat',
+        path: '/wechat'
+      },
+      {
+        label: 'Twitter',
+        path: '/twitter'
+      },
+      {
+        label: 'Viber',
+        path: '/viber'
+      },
+      {
+        label: 'Line chat',
+        path: '/line'
+      },
+      {
+        label: 'Email client',
+        path: '/email'
+      },
+      {
+        label: 'Mixed chats',
+        path: '/mixed'
+      },
+      {
+        label: 'Custom',
+        path: '/custom'
       }
     ]
   })
@@ -63,16 +72,25 @@ export default {
 </script>
 
 <style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-
-a {
-  color: #41b883;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 </style>
