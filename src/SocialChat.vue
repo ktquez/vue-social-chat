@@ -116,6 +116,7 @@ export default {
 <style lang="stylus">
 $bg = #333
 $bgButton = #333
+$waColor = #46c056
 
 :root
   --vsc-bg-header: $bg
@@ -126,6 +127,9 @@ $bgButton = #333
   --vsc-text-color-button: white
   --vsc-outline-color: #333
   --vsc-border-default: 1px solid #f3f3f3
+
+.vsc-whatsapp.vsc-popup
+  --vsc-bg-button: $waColor
 
 .vsc-popup *
   box-sizing: border-box
@@ -168,7 +172,7 @@ $bgButton = #333
     color: var(--vsc-text-color-header)
 
   &-body
-    padding: 16px
+    padding: 14px
     background-color: white
 
     &__list
@@ -180,17 +184,17 @@ $bgButton = #333
         width: 100%
 
         &:not(:last-child)
-          margin-bottom: 3px;
+          border-bottom: 1px solid #fbfbfb
 
     &__link
       outline: none;
       display: flex
-      padding: 20px
+      padding: 10px 14px
       text-decoration: none
-      border-radius: 10px
       color: #333
       letter-spacing: .2px
-      transition: box-shadow .3s
+      margin: 1.5px 0
+      border-radius: 10px
 
       &:hover, &:focus
         background-color: #fbfbfb
@@ -199,15 +203,24 @@ $bgButton = #333
         box-shadow: 0 0 0 3px var(--vsc-outline-color)
 
       &-avatar
+        position: relative
         width: 62px
         height: 62px
-        overflow: hidden
 
         > img
           width: 100%
           height: 100%
           object-fit: cover
           border-radius: 50%
+
+        &-brand
+          position: absolute;
+          right: 2px;
+          bottom: 2px;
+          width: 15px;
+          height: 15px;
+          background-repeat: no-repeat;
+          background-size: contain;
 
       &-info
         padding-top: 12px
@@ -237,7 +250,7 @@ $bgButton = #333
     -webkit-appearance: none
     -moz-appearance: none
     background-color: transparent
-    color: inherit
+    color: var(--vsc-text-color-button)
     border: none
     cursor: pointer
     border-radius: 50%
@@ -247,11 +260,10 @@ $bgButton = #333
     padding-top: 2px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.3)
     font-family: inherit
-    transition: background-color .3s, box-shadow .3s
+    transition: background-color .3s, box-shadow .2s
 
     &--default
       background-color: var(--vsc-bg-button)
-      color: var(--vsc-text-color-button)
 
     &--no-icon
       border-radius: 30px
