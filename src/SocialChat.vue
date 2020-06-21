@@ -41,13 +41,14 @@
         :title="ariaLabelButton"
         @click="togglePopup"
       >
-        <slot
-          v-if="!show || !icon"
-          name="icon"
-          :open="show"
-        >
-          <chatIcon />
-        </slot>
+        <span v-show="!show || !icon">
+          <slot
+            name="icon"
+            :open="show"
+          >
+            <chatIcon />
+          </slot>
+        </span>
         <closeIcon v-show="show && icon" />
       </button>
     </div>
@@ -91,6 +92,18 @@ export default {
     }
   },
 
+  watch: {
+    show (val) {
+      if (val) {
+        document.addEventListener('click', this.closeClickOutside)
+        document.addEventListener('keydown', this.closeKeydownEsc)
+        return
+      }
+      document.removeEventListener('click', this.closeClickOutside)
+      document.removeEventListener('keydown', this.closeKeydownEsc)
+    }
+  },
+
   methods: {
     togglePopup () {
       this.show = !this.show
@@ -102,6 +115,14 @@ export default {
     focusFirstLink () {
       const link = this.$refs.vscPopup.querySelector('a')
       if (link) setTimeout(() => link.focus(), 200)
+    },
+
+    closeClickOutside ({ target }) {
+      if (!this.$refs.vscPopup.contains(target)) this.togglePopup()
+    },
+
+    closeKeydownEsc ({ which }) {
+      if (which === 27) this.togglePopup()
     }
   }
 }
