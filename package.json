@@ -14,7 +14,7 @@
     "build:es": "rollup --config rollup.config.prod.js --format es --file dist/vue-social-chat.esm.js",
     "build:unpkg": "rollup --config rollup.config.prod.js --format iife --file dist/vue-social-chat.min.js",
     "docs:dev": "vuepress dev docs --no-cache",
-    "docs:build": "vuepress build docs --no-cache && echo darkmode.vue-a11y.com >> docs/.vuepress/dist/CNAME",
+    "docs:build": "vuepress build docs --no-cache",
     "docs:publish": "gh-pages -d docs/.vuepress/dist",
     "demo:dev": "cd demo && npm run serve",
     "demo:build": "cd demo && npm run build",
