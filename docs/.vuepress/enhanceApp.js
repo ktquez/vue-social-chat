@@ -1,5 +1,7 @@
 import VueSocialChat from '../../dist/vue-social-chat.esm'
 
-export default ({ Vue }) => {
-  Vue.use(VueSocialChat)
+export default ({ Vue, isServer }) => {
+  if (!isServer) {
+    Vue.use(VueSocialChat)
+  }
 }
