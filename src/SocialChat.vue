@@ -45,7 +45,7 @@
       >
         <span v-show="!show || !icon">
           <slot
-            name="icon"
+            name="button"
             :open="show"
           >
             <img
