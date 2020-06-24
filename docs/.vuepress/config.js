@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/vue-social-chat/',
   theme: 'default-vue-a11y',
   title: 'Vue social chat',
   description: 'Vue.js component for your visitors and customers to send messages directly to you through social chats or customized form.',
