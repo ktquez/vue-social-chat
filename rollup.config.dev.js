@@ -29,7 +29,7 @@ export default {
     {
       name: 'VueSocialChat',
       file: 'demo/vue-social-chat.js',
-      format: 'umd',
+      format: 'esm',
       exports: 'named'
     }
   ]
