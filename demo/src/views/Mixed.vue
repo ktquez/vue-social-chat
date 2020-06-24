@@ -3,13 +3,12 @@
     <hr>
     <h1>Text button and mixed app chats in list</h1>
     <SocialChat
-      :icon="false"
       :attendants="attendants"
     >
       <template v-slot:header>
         <p>Click one of our representatives below to chat</p>
       </template>
-      <template v-slot:icon="{ open }">
+      <template v-slot:button="{ open }">
         <span v-show="!open">Contact us</span>
         <span v-show="open">Close</span>
       </template>
@@ -75,7 +74,3 @@ export default {
   })
 }
 </script>
-
-<style>
-
-</style>

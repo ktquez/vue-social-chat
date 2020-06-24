@@ -65,6 +65,10 @@ export default {
       {
         label: 'Custom',
         path: '/custom'
+      },
+      {
+        label: 'Right to left',
+        path: '/rtl'
       }
     ]
   })

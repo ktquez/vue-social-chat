@@ -10,6 +10,7 @@ import Line from '../views/Line.vue'
 import Email from '../views/Email.vue'
 import Mixed from '../views/Mixed.vue'
 import Custom from '../views/Custom.vue'
+import rtl from '../views/RTL.vue'
 
 Vue.use(VueRouter)
 
@@ -53,6 +54,10 @@ const routes = [
   {
     path: '/custom',
     component: Custom
+  },
+  {
+    path: '/rtl',
+    component: rtl
   }
 ]
 

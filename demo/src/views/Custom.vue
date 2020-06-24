@@ -43,7 +43,7 @@
         </div>
         <strong v-show="subscribed">Successfully subscribed</strong>
       </template>
-      <template v-slot:icon="{ open }">
+      <template v-slot:button="{ open }">
         <img
           v-show="!open"
           src="https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src/icons/email.svg"
