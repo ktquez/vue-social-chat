@@ -8,7 +8,7 @@
       class="wechat-chat"
       :attendants="attendants"
     >
-      <template v-slot:icon>
+      <template v-slot:button>
         <img
           src="https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src/icons/wechat.svg"
           alt="icon wechat"

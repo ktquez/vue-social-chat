@@ -10,7 +10,7 @@
       <template v-slot:header>
         <p>Click one of our representatives below to chat on Line.</p>
       </template>
-      <template v-slot:icon>
+      <template v-slot:button>
         <img
           src="https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src/icons/line.svg"
           alt="icon line"

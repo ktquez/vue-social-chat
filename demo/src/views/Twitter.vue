@@ -8,7 +8,7 @@
       class="twitter-chat"
       :attendants="attendants"
     >
-      <template v-slot:icon>
+      <template v-slot:button>
         <img
           src="https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src/icons/twitter.svg"
           alt="icon twitter"
