@@ -324,7 +324,7 @@ $bgButton = #333
     &:focus, &:hover
       box-shadow: 0 0 0 3px white, 0 0 0 6px var(--vsc-outline-color)
 
-@media (prefers-reduced-motion) {
+@media(prefers-reduced-motion: reduce) {
   .vsc-popup * {
     transition: none;
   }
