@@ -4,8 +4,7 @@ module.exports = {
   description: 'Vue.js component for your visitors and customers to send messages directly to you through social chats or customized form.',
   serviceWorker: true,
   head: [
-    ['meta', { name: 'theme-color', content: '#fff' }],
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }]
+    ['meta', { name: 'theme-color', content: '#fff' }]
   ],
   themeConfig: {
     home: false,
@@ -16,8 +15,34 @@ module.exports = {
     locales: {
       '/': {
         editLinkText: 'Edit this page on GitHub',
-        nav: [],
-        sidebar: []
+        sidebar: [
+          {
+            title: 'Getting Started',
+            collapsable: false,
+            children: [
+              '/',
+              '/setup.md',
+              '/props.md',
+              '/slots.md',
+              '/events.md'
+            ]
+          },
+          {
+            title: 'Demo',
+            collapsable: false,
+            children: [
+              '/demo/whatsapp.md',
+              '/demo/telegram.md',
+              '/demo/messenger.md',
+              '/demo/viber.md',
+              '/demo/wechat.md',
+              '/demo/line.md',
+              '/demo/twitter.md',
+              '/demo/mixed.md',
+              '/demo/custom.md'
+            ]
+          }
+        ]
       }
     }
   }
