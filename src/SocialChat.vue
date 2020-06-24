@@ -178,6 +178,7 @@ $bgButton = #333
 
 .vsc-popup
   position: fixed
+  z-index: 999
   right: 20px
   bottom: 20px
   display: flex
@@ -247,6 +248,7 @@ $bgButton = #333
       letter-spacing: .2px
       margin: 1.5px 0
       border-radius: 10px
+      text-decoration: none !important
 
       &:hover, &:focus
         background-color: #fbfbfb
@@ -280,6 +282,7 @@ $bgButton = #333
 
         > span
           display: block
+          line-height: 1rem
 
         &__label
           font-size: 12px
@@ -287,6 +290,7 @@ $bgButton = #333
         &__name
           font-weight: bold
           margin-top: 2px
+          font-size: 18px
 
   &-footer
     padding: 16px
