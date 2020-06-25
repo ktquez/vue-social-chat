@@ -84,12 +84,13 @@ export default {
 `vue-social-chat` uses CSS variables, so you can customize it with the colors you want.
 
 ```css
---vsc-bg-header: $bg
---vsc-bg-footer: #fafafa
---vsc-text-color-header: white
---vsc-text-color-footer: inherit
---vsc-bg-button: $bgButton
---vsc-text-color-button: white
---vsc-outline-color: #333
---vsc-border-default: 1px solid #f3f3f3
+--vsc-bg-header: $bg;
+--vsc-bg-footer: #fafafa;
+--vsc-text-color-header: white;
+--vsc-text-color-footer: inherit;
+--vsc-bg-button: $bgButton;
+--vsc-text-color-button: white;
+--vsc-outline-color: #333;
+--vsc-border-color-bottom-header: transparent;
+--vsc-border-color-top-footer: #f3f3f3;
 ```

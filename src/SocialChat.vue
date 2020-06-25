@@ -34,6 +34,7 @@
         </div>
       </transition>
       <button
+        ref="vscButton"
         class="vsc-popup-button vsc-popup-button--default"
         :class="{ 'vsc-popup-button--no-icon': !icon }"
         aria-haspopup="true"
@@ -129,16 +130,9 @@ export default {
   methods: {
     togglePopup () {
       this.show = !this.show
+      setTimeout(() => this.$refs.vscButton.blur(), 500)
       if (!this.show) return this.$emit('close')
       this.$emit('open')
-      this.focusFirstLink()
-    },
-
-    focusFirstLink () {
-      this.$nextTick(() => {
-        const link = this.$refs.vscPopup.querySelector('a')
-        if (link) setTimeout(() => link.focus(), 200)
-      })
     },
 
     closeClickOutside ({ target }) {
@@ -158,18 +152,18 @@ export default {
 </script>
 
 <style lang="stylus">
-$bg = #333
-$bgButton = #333
+$defaultColor = #333
 
 :root
-  --vsc-bg-header: $bg
+  --vsc-bg-header: $defaultColor
   --vsc-bg-footer: #fafafa
   --vsc-text-color-header: white
   --vsc-text-color-footer: inherit
-  --vsc-bg-button: $bgButton
+  --vsc-bg-button: $defaultColor
   --vsc-text-color-button: white
-  --vsc-outline-color: #333
-  --vsc-border-default: 1px solid #f3f3f3
+  --vsc-outline-color: $defaultColor
+  --vsc-border-color-bottom-header: transparent
+  --vsc-border-color-top-footer: #f3f3f3
 
 .vsc-popup *
   box-sizing: border-box
@@ -221,7 +215,7 @@ $bgButton = #333
 
   &-header
     padding: 22px 18px
-    border-bottom: var(--vsc-border-default)
+    border-bottom: 5px solid var(--vsc-border-color-bottom-header)
     background-color: var(--vsc-bg-header)
     color: var(--vsc-text-color-header)
 
@@ -297,7 +291,7 @@ $bgButton = #333
 
   &-footer
     padding: 16px
-    border-top: var(--vsc-border-default)
+    border-top: 1px solid var(--vsc-border-color-top-footer)
     background-color: var(--vsc-bg-footer)
     color: var(--vsc-text-color-footer)
 
