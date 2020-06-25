@@ -39,7 +39,7 @@
         :class="{ 'vsc-popup-button--no-icon': !icon }"
         aria-haspopup="true"
         aria-controls="vsc-popup-box"
-        :aria-expanded="show"
+        :aria-expanded="show ? 'true' : 'false'"
         :aria-label="ariaLabelButton"
         :title="ariaLabelButton"
         @click="togglePopup"
