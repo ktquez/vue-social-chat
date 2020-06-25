@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/ktquez/vue-social-chat/compare/v0.1.3...v0.1.4) (2020-06-25)
+
+
+### Bug Fixes
+
+* Using string in aria-expanded attribute ([cb7ecf5](https://github.com/ktquez/vue-social-chat/commit/cb7ecf5c839a62beb38956da3f888dcafc91e7d4))
+
 ### [0.1.3](https://github.com/ktquez/vue-social-chat/compare/v0.1.2...v0.1.3) (2020-06-25)
 
 
