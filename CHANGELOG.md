@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/ktquez/vue-social-chat/compare/v0.1.2...v0.1.3) (2020-06-25)
+
+
+### Bug Fixes
+
+* Make aria-expanded dynamic ([3e43380](https://github.com/ktquez/vue-social-chat/commit/3e43380863bd4bc164dad522d50592335027e724))
+
 ### [0.1.2](https://github.com/ktquez/vue-social-chat/compare/v0.1.1...v0.1.2) (2020-06-25)
 
 ### [0.1.1](https://github.com/ktquez/vue-social-chat/compare/v0.1.0...v0.1.1) (2020-06-25)
