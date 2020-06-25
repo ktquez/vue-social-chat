@@ -1,4 +1,4 @@
-# vue-social-support
+# vue-social-chat
 
 Vue.js component for your visitors and customers to send messages directly to you through social chats or customized form.
 
