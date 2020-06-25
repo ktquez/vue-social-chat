@@ -39,7 +39,7 @@
         :class="{ 'vsc-popup-button--no-icon': !icon }"
         aria-haspopup="true"
         aria-controls="vsc-popup-box"
-        aria-expanded="false"
+        :aria-expanded="show"
         :aria-label="ariaLabelButton"
         :title="ariaLabelButton"
         @click="togglePopup"
@@ -104,7 +104,7 @@ export default {
 
   computed: {
     ariaLabelButton () {
-      return `${this.show ? 'Close' : 'Open'} social support widget`
+      return `${this.show ? 'Close' : 'Open'} social chat popup`
     },
 
     getAttendants () {
