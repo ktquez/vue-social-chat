@@ -188,6 +188,9 @@ $bgButton = #333
   margin-left: 20px
   -webkit-font-smoothing: antialiased
 
+  &[dir="ltr"]
+    text-align: left
+
   &[dir="rtl"]
     left: 20px
     right: auto
