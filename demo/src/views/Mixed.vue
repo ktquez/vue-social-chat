@@ -6,7 +6,9 @@
       :attendants="attendants"
     >
       <template v-slot:header>
-        <p>Click one of our representatives below to chat</p>
+        <p style="font-weight: 500">
+          Click one of our representatives below to chat
+        </p>
       </template>
       <template v-slot:button="{ open }">
         <span v-show="!open">Contact us</span>
@@ -43,31 +45,31 @@ export default {
       {
         app: 'whatsapp',
         label: 'Support',
-        name: 'Alan Albuquerque',
+        name: 'Alan Ktquez',
         number: '5581983383532',
         avatar: {
           src: 'https://avatars0.githubusercontent.com/u/8084606?s=460&u=20b6499a416cf7129a18e5c168cf387e159edb1a&v=4',
-          alt: 'Avatar Support Alan Albuquerque'
+          alt: 'Alan Ktquez avatar'
         }
       },
       {
         app: 'messenger',
-        label: 'Support TI',
-        name: 'Rodrigo Pombo',
+        label: 'Sales',
+        name: 'Alexia Chapman',
         id: '100002252063765',
         avatar: {
-          src: 'https://avatars3.githubusercontent.com/u/1911623?s=460&u=e229be53a0816de373a668ad8f74e20b30c056c8&v=4',
-          alt: 'Avatar Support Rodrigo Pombo'
+          src: 'https://randomuser.me/api/portraits/women/63.jpg',
+          alt: 'Alexia Chapman avatar'
         }
       },
       {
         app: 'twitter',
         label: 'Human Resources',
-        name: 'Alan Albuquerque',
+        name: 'Alan Ktquez',
         id: '2409712082',
         avatar: {
           src: 'https://avatars0.githubusercontent.com/u/8084606?s=460&u=20b6499a416cf7129a18e5c168cf387e159edb1a&v=4',
-          alt: 'Avatar Support Alan Albuquerque'
+          alt: 'Alan Ktquez avatar'
         }
       }
     ]

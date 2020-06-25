@@ -7,7 +7,10 @@
       class="whatsapp-chat"
       :attendants="attendants"
     >
-      <p slot="header">
+      <p
+        slot="header"
+        style="font-weight: 500"
+      >
         Click one of our representatives below to chat on WhatsApp.
       </p>
       <template v-slot:button>
@@ -46,21 +49,21 @@ export default {
       {
         app: 'whatsapp',
         label: 'Support',
-        name: 'Alan Albuquerque',
+        name: 'Alan Ktquez',
         number: '5581983383532',
         avatar: {
           src: 'https://avatars0.githubusercontent.com/u/8084606?s=460&u=20b6499a416cf7129a18e5c168cf387e159edb1a&v=4',
-          alt: 'Avatar Support Alan Albuquerque'
+          alt: 'Alan Ktquez avatar'
         }
       },
       {
         app: 'whatsapp',
-        label: 'Support TI',
-        name: 'Rodrigo Pombo',
+        label: 'Sales',
+        name: 'Alexia Chapman',
         number: '5581987654321',
         avatar: {
-          src: 'https://avatars3.githubusercontent.com/u/1911623?s=460&u=e229be53a0816de373a668ad8f74e20b30c056c8&v=4',
-          alt: 'Avatar Support Rodrigo Pombo'
+          src: 'https://randomuser.me/api/portraits/women/63.jpg',
+          alt: 'Alexia Chapman avatar'
         }
       }
     ]
@@ -74,5 +77,6 @@ export default {
   --vsc-bg-header: var(--whatsapp);
   --vsc-bg-button: var(--whatsapp);
   --vsc-outline-color: var(--whatsapp);
+  --vsc-border-color-bottom-header: #289D37;
 }
 </style>

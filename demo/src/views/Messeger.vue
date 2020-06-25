@@ -9,7 +9,9 @@
       :attendants="attendants"
     >
       <template v-slot:header>
-        <p>Click one of our representatives below to chat on Messeger.</p>
+        <p style="font-weight: 500">
+          Click one of our representatives below to chat on Messeger.
+        </p>
       </template>
       <template v-slot:button>
         <img
@@ -49,21 +51,21 @@ export default {
       {
         app: 'messenger',
         label: 'Support',
-        name: 'Alan Albuquerque',
+        name: 'Alan Ktquez',
         id: '100002252063765',
         avatar: {
           src: 'https://avatars0.githubusercontent.com/u/8084606?s=460&u=20b6499a416cf7129a18e5c168cf387e159edb1a&v=4',
-          alt: 'Avatar Support Alan Albuquerque'
+          alt: 'Alan Ktquez avatar'
         }
       },
       {
         app: 'messenger',
-        label: 'Support TI',
-        name: 'Rodrigo Pombo',
+        label: 'Sales',
+        name: 'Alexia Chapman',
         id: '100002252063765',
         avatar: {
-          src: 'https://avatars3.githubusercontent.com/u/1911623?s=460&u=e229be53a0816de373a668ad8f74e20b30c056c8&v=4',
-          alt: 'Avatar Support Rodrigo Pombo'
+          src: 'https://randomuser.me/api/portraits/women/63.jpg',
+          alt: 'Alexia Chapman avatar'
         }
       }
     ]
@@ -77,5 +79,6 @@ export default {
   --vsc-bg-header: var(--messenger);
   --vsc-bg-button: var(--messenger);
   --vsc-outline-color: var(--messenger);
+  --vsc-border-color-bottom-header: #0085C7;
 }
 </style>
