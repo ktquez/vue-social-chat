@@ -129,8 +129,8 @@ export default {
   methods: {
     togglePopup () {
       this.show = !this.show
-      this.show ? this.$emit('open') : this.$emit('close')
-      if (!this.show) return
+      if (!this.show) return this.$emit('close')
+      this.$emit('open')
       this.focusFirstLink()
     },
 
