@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/ktquez/vue-social-chat/compare/v0.1.0...v0.1.1) (2020-06-25)
+
+
+### Bug Fixes
+
+* Add text-align: left when dir=ltr ([b4529ff](https://github.com/ktquez/vue-social-chat/commit/b4529ff670a2f35dc0a4926dd8da65025f86fd25))
+
 ## [0.1.0](https://github.com/ktquez/vue-social-chat/compare/v0.0.1...v0.1.0) (2020-06-24)
 
 
