@@ -1,5 +1,5 @@
 <template>
-  <FocusLock :disabled="!show">
+  <FocusLoop :disabled="!show">
     <div
       ref="vscPopup"
       class="vsc-popup"
@@ -64,12 +64,12 @@
         >
       </button>
     </div>
-  </FocusLock>
+  </FocusLoop>
 </template>
 
 <script>
 import ListChat from './ListChat.vue'
-import FocusLock from 'vue-focus-lock'
+import { FocusLoop } from '@vue-a11y/focus-loop'
 import { URL_ASSETS, HREF_BY_APP } from './constants'
 
 export default {
@@ -77,7 +77,7 @@ export default {
 
   components: {
     ListChat,
-    FocusLock
+    FocusLoop
   },
 
   props: {

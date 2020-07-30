@@ -7,7 +7,7 @@ import vue from 'rollup-plugin-vue'
 export default commandLineArgs => {
   return {
     input: 'src/index.js',
-    external: ['vue-focus-lock'],
+    external: ['@vue-a11y/focus-loop'],
     plugins: [
       commonjs(),
       replace({
@@ -30,7 +30,7 @@ export default commandLineArgs => {
       name: 'VueSocialChat',
       exports: 'named',
       globals: {
-        'vue-focus-lock': 'FocusLock'
+        '@vue-a11y/focus-loop': 'FocusLoop'
       }
     }
   }
