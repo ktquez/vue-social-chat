@@ -1,63 +1,52 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import WhatsApp from '../views/WhatsApp.vue'
-import Telegram from '../views/Telegram.vue'
-import Messeger from '../views/Messeger.vue'
-import WeChat from '../views/WeChat.vue'
-import Twitter from '../views/Twitter.vue'
-import Viber from '../views/Viber.vue'
-import Line from '../views/Line.vue'
-import Email from '../views/Email.vue'
-import Mixed from '../views/Mixed.vue'
-import Custom from '../views/Custom.vue'
-import rtl from '../views/RTL.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/whatsapp',
-    component: WhatsApp
+    component: () => import(/* webpackChunkName: "whats-app" */ '../views/WhatsApp.vue')
   },
   {
     path: '/messeger',
-    component: Messeger
+    component: () => import(/* webpackChunkName: "messeger" */ '../views/Messeger.vue')
   },
   {
     path: '/telegram',
-    component: Telegram
+    component: () => import(/* webpackChunkName: "telegram" */ '../views/Telegram.vue')
   },
   {
     path: '/wechat',
-    component: WeChat
+    component: () => import(/* webpackChunkName: "we-chat" */ '../views/WeChat.vue')
   },
   {
     path: '/twitter',
-    component: Twitter
+    component: () => import(/* webpackChunkName: "twitter" */ '../views/Twitter.vue')
   },
   {
     path: '/viber',
-    component: Viber
+    component: () => import(/* webpackChunkName: "viber" */ '../views/Viber.vue')
   },
   {
     path: '/line',
-    component: Line
+    component: () => import(/* webpackChunkName: "line" */ '../views/Line.vue')
   },
   {
     path: '/email',
-    component: Email
+    component: () => import(/* webpackChunkName: "email" */ '../views/Email.vue')
   },
   {
     path: '/mixed',
-    component: Mixed
+    component: () => import(/* webpackChunkName: "mixed" */ '../views/Mixed.vue')
   },
   {
     path: '/custom',
-    component: Custom
+    component: () => import(/* webpackChunkName: "custom" */ '../views/Custom.vue')
   },
   {
     path: '/rtl',
-    component: rtl
+    component: () => import(/* webpackChunkName: "rtl" */ '../views/RTL.vue')
   }
 ]
 
