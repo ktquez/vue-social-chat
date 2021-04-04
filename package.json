@@ -43,6 +43,18 @@
     "telegram"
   ],
   "author": "Alan Ktquez <ktquez@gmail.com> (https://ktquez-play.web.app/en/)",
+  "contributors": [
+    {
+      "name": "Lucas Lima",
+      "email": "lucasferreiralimax@gmail.com",
+      "url": "https://github.com/lucasferreiralimax"
+    },
+    {
+      "name": "Mihajlo Nikodijevic",
+      "email": "mihajloomozaik@gmail.com",
+      "url": "https://github.com/mihajlon97"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ktquez/vue-social-chat/issues"
