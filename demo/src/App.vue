@@ -8,6 +8,7 @@
         href="https://github.com/ktquez/vue-social-chat/tree/next"
         title="Vue Social Chat for Vue 3"
         rel="noopener noreferer"
+        target="_blank"
       >
         Vue Social Chat with Vue 3
       </a>
@@ -55,6 +56,7 @@ li
 .logo
   width 200px
   transition .5s all
+  will-change filter
   &:hover
     transform translateY(-10px)
     filter drop-shadow(0px 14px 5px #00000055)
