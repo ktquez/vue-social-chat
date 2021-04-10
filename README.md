@@ -1,32 +1,27 @@
-# vue-social-chat
+# Vue 3 + Typescript + Vite
 
-Vue.js component for your visitors and customers to send messages directly to you through social chats or customized form.
+This template should help get you started developing with Vue 3 and Typescript in Vite.
 
-`vue-social-chat` allows your customers to open a conversation from your website directly to chat apps like **WhatsApp**, **Telegram**, **Messenger**, **WeChat**, **Line**, **Viber** or even the same **custom form**.
+## Recommended IDE Setup
 
-Most people use a chat app, so offering your customer a form of direct contact helps you cover visitors to customers, as well as providing you with **leads** to increase your sales or spread your content.
+[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
 
-## Links
+### If Using `<script setup>`
 
-- [Documentation](https://ktquez.github.io/vue-social-chat)
-- [Demo](https://vue-social-chat.surge.sh/)
+[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
 
-## Contributing
+## Type Support For `.vue` Imports in TS
 
-- Check the open issues or open a new issue to start a discussion around your feature idea or the bug you found;
-- Fork repository, make changes, add your name and link in the authors session CONTRIBUTING.md;
-- Send a pull request;
+Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
 
-## Support me
+### If Using Volar
 
-<a href="https://ko-fi.com/O5O31PRAX" target="_blank" aria-label="Support me on Ko-fi">
-  <img src="https://www.ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi" style="width: 217px !important;" >
-</a>
+Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
 
-<br> 
+### If Using Vetur
 
-If you want a faster communication, find me on [@ktquez](https://twitter.com/ktquez)
-
-## License
-
-VueDisqus is open-sourced package licensed under the [MIT](https://github.com/ktquez/vue-disqus/blob/master/LICENSE) license
+1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
+2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
+3. Open `src/main.ts` in VSCode
+4. Open the VSCode command palette
+5. Search and run "Select TypeScript version" -> "Use workspace version"

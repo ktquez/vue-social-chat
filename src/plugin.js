@@ -1,12 +1,5 @@
-import SocialChat from './SocialChat.vue'
+import VueSocialChat from './components/SocialChat.vue'
 
-export default function install (Vue) {
-  if (install.installed) return
-  install.installed = true
-  Vue.component('SocialChat', SocialChat)
-}
-
-// auto install
-if (typeof window !== 'undefined' && typeof window.Vue !== 'undefined') {
-  window.Vue.use(install)
+export default function install (app) {
+  app.component('VueSocialChat', VueSocialChat)
 }
