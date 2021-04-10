@@ -16,12 +16,7 @@
     <template v-slot:footer>
       <small>
         Call us to
-        <a
-          href="tel:+55988656544"
-          title="Call us"
-        >
-          +55 95865-6544
-        </a>
+        <a href="tel:+55988656544" title="Call us">+55 95865-6544</a>
         from 8:00hs a 18:00hs
       </small>
     </template>

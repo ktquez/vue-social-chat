@@ -7,9 +7,7 @@
     :attendants="attendants"
   >
     <template v-slot:header>
-      <p style="font-weight: 500">
-        Click one of our representatives below to chat on Messeger.
-      </p>
+      <p>Click one of our representatives below to chat on Messeger.</p>
     </template>
     <template v-slot:button>
       <img
@@ -82,4 +80,7 @@ export default {
   --vsc-bg-button var(--messenger)
   --vsc-outline-color var(--messenger)
   --vsc-border-color-bottom-header #0085C7
+
+  .vsc-popup-header p
+    font-weight 500
 </style>
