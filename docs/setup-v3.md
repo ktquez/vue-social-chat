@@ -1,20 +1,25 @@
-# Setup
+# Setup for Vue 3
 
 ## Installation
 
 ```bash
-$ npm install -S vue-social-chat
+$ npm install -S vue-social-chat@next
 # or
-$ yarn add vue-social-chat
+$ yarn add vue-social-chat@next
 ```
 
 ## Usage
 
+Globally:
+
 ```js
-import Vue from 'vue'
+import { createApp } from 'vue'
+import App from './App.vue'
 import VueSocialChat from 'vue-social-chat'
 
-Vue.use(VueSocialChat)
+createApp(App)
+  .use(VueSocialChat)
+  .mount('#app')
 ```
 
 Or import component locally
@@ -43,25 +48,29 @@ Using the component in the template, por exemplo
       icon
       :attendants="attendants"
     >
-      <p slot="header">Click on one of our attendants below to chat on WhatsApp.</p>
-      <template v-slot:button>
+      <template #header>
+        <p>Click on one of our attendants below to chat on WhatsApp.</p>
+      </template>
+      <template #button>
         <img
           src="https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src/icons/whatsapp.svg"
           alt="icon whatsapp"
           aria-hidden="true"
         >      
       </template>
-      <small slot="footer">Opening hours: 8am to 6pm</small>
+      <template #footer>
+        <small>Opening hours: 8am to 6pm</small>
+      </template>
     </SocialChat>
   </div>
 </template>
 
 <script>
-// ...
 export default {
-  // ...
-  data: () => ({
-    attendants: [
+  name: 'MyNameComponent',
+
+  setup () {
+    const attendants = [
       {
         app: 'whatsapp',
         label: 'Technical support',
@@ -74,7 +83,9 @@ export default {
       },
       // ...
     ]
-  })
+
+    return { attendants }
+  }
 }
 </script>
 ```
@@ -84,13 +95,13 @@ export default {
 `vue-social-chat` uses CSS variables, so you can customize it with the colors you want.
 
 ```css
---vsc-bg-header: $bg;
---vsc-bg-footer: #fafafa;
---vsc-text-color-header: white;
---vsc-text-color-footer: inherit;
---vsc-bg-button: $bgButton;
---vsc-text-color-button: white;
---vsc-outline-color: #333;
---vsc-border-color-bottom-header: transparent;
---vsc-border-color-top-footer: #f3f3f3;
+--vsc-bg-header
+--vsc-bg-footer
+--vsc-text-color-header
+--vsc-text-color-footer
+--vsc-bg-button
+--vsc-text-color-button
+--vsc-outline-color
+--vsc-border-color-bottom-header
+--vsc-border-color-top-footer
 ```
