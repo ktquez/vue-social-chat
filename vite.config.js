@@ -8,11 +8,9 @@ export default defineConfig({
     vue({ isProduction: true })
   ],
   build: {
-    cssCodeSplit: true,
-    emptyOutDir: true,
     lib: {
       entry: path.resolve(__dirname, 'src'),
-      name: 'vue-social-chat',
+      name: 'VueSocialChat',
       formats: ['es', 'cjs', 'iife']
     },
     rollupOptions: {
