@@ -1,3 +1,5 @@
-import Plugin from './plugin'
+import VueSocialChat from './plugin'
 
-export default Plugin
+export default VueSocialChat
+
+export { default as SocialChat } from './SocialChat.vue'
