@@ -1,5 +1,10 @@
 # vue-social-chat
 
+---
+🔥 HEADS UP! You are in the Vue 2 compatible branch, [check the branch for Vue 3 support](https://github.com/ktquez/vue-social-chat/tree/next).
+
+---
+
 Vue.js component for your visitors and customers to send messages directly to you through social chats or customized form.
 
 `vue-social-chat` allows your customers to open a conversation from your website directly to chat apps like **WhatsApp**, **Telegram**, **Messenger**, **WeChat**, **Line**, **Viber** or even the same **custom form**.
