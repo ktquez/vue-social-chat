@@ -1,13 +1,15 @@
 {
   "name": "vue-social-chat",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
     "demo:dev": "cd demo && vite",
     "demo:build": "cd demo && vite build",
-    "demo:publish": "cp ./demo/dist/index.html ./demo/dist/200.html && surge ./demo/dist https://vue-social-chat.surge.sh/"
+    "demo:publish": "cp ./demo/dist/index.html ./demo/dist/200.html && surge ./demo/dist https://vue-social-chat.surge.sh/",
+    "release": "standard-version",
+    "project:publish": "git push --tags origin next && yarn build && npm publish --tag next"
   },
   "dependencies": {
     "@vue-a11y/focus-loop": "^1.0.3",
@@ -16,6 +18,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.1",
     "@vue/compiler-sfc": "^3.0.5",
+    "standard-version": "^9.3.0",
     "stylus": "^0.54.8",
     "vite": "^2.1.5",
     "vue-router": "^4.0.5"
