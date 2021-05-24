@@ -6,7 +6,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "demo:dev": "cd demo && vite",
-    "demo:build": "cd demo && vite build"
+    "demo:build": "cd demo && vite build",
+    "demo:publish": "cp ./demo/dist/index.html ./demo/dist/200.html && surge ./demo/dist https://vue-social-chat.surge.sh/"
   },
   "dependencies": {
     "@vue-a11y/focus-loop": "^1.0.3",

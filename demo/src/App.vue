@@ -6,11 +6,11 @@
     <h1>
       <a
         href="https://github.com/ktquez/vue-social-chat/tree/next"
-        title="Vue Social Chat for Vue 3"
+        title="Vue Social Chat for Vue 2 &amp; Vue 3"
         rel="noopener noreferer"
         target="_blank"
       >
-        Vue Social Chat with Vue 3
+        VueSocialChat for Vue 2 &amp; Vue 3
       </a>
     </h1>
     <nav-list />

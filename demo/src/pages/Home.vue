@@ -10,7 +10,7 @@ export default defineComponent({
   name: 'Home',
   setup () {
     onMounted(() => {
-      document.title = 'Vue Social Chat with Vue 3'
+      document.title = 'VueSocialChat for Vue 2 &amp; Vue 3'
     })
   }
 })

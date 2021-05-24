@@ -10,11 +10,6 @@ export default [
     component: () => import('../pages/About.vue')
   },
   {
-    name: 'contact',
-    path: '/contact',
-    component: () => import('../pages/Contact.vue')
-  },
-  {
     path: '/whatsapp',
     component: () => import('../pages/WhatsApp.vue')
   },
