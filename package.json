@@ -1,6 +1,16 @@
 {
   "name": "vue-social-chat",
   "version": "1.0.0",
+  "description": "Vue.js component for your visitors and customers to send messages directly to you through social chats or customized form.",
+  "main": "dist/vue-social-chat.cjs.js",
+  "browser": "dist/vue-social-chat.es.js",
+  "module": "dist/vue-social-chat.es.js",
+  "unpkg": "dist/vue-social-chat.iife.js",
+  "jsdelivr": "dist/vue-social-chat.iife.js",
+  "style": "dist/style.css",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
