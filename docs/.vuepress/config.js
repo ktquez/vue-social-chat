@@ -26,22 +26,11 @@ module.exports = {
               '/setup-v3.md',
               '/props.md',
               '/slots.md',
-              '/events.md'
-            ]
-          },
-          {
-            title: 'Demo',
-            collapsable: false,
-            children: [
-              '/demo/whatsapp.md',
-              '/demo/telegram.md',
-              '/demo/messenger.md',
-              '/demo/viber.md',
-              '/demo/wechat.md',
-              '/demo/line.md',
-              '/demo/twitter.md',
-              '/demo/mixed.md',
-              '/demo/custom.md'
+              '/events.md',
+              {
+                title: 'Demo',
+                path: 'https://vue-social-chat.surge.sh/'
+              }
             ]
           }
         ]
