@@ -138,7 +138,7 @@ function normalizeComponent(template, style, script, scopeId, isFunctionalTempla
 var __vue_script__ = script;
 
 /* template */
-var __vue_render__ = function (_h,_vm) {var _c=_vm._c;return _c('ul',{staticClass:"vsc-popup-body__list"},[_vm._ssrNode((_vm._ssrList((_vm.props.attendants),function(attendant,index){return ("<li class=\"vsc-popup-body__list-item\"><a"+(_vm._ssrAttr("href",attendant.href))+" rel=\"noopener noreferer\" target=\"_blank\""+(_vm._ssrAttr("aria-label",("Contact " + (attendant.name) + ", opens in a new window")))+" class=\"vsc-popup-body__link\"><div class=\"vsc-popup-body__link-avatar\"><img"+(_vm._ssrAttr("src",attendant.avatar.src))+(_vm._ssrAttr("alt",attendant.avatar.alt))+"> <span class=\"vsc-popup-body__link-avatar-brand\""+(_vm._ssrStyle(null,attendant.app ? ("background-image: url(" + (_vm.props.urlAsset) + "/" + (attendant.app) + ".png)") : '', null))+"></span></div> <div class=\"vsc-popup-body__link-info\"><span class=\"vsc-popup-body__link-info__label\">"+_vm._ssrEscape(_vm._s(attendant.label))+"</span> <span class=\"vsc-popup-body__link-info__name\">"+_vm._ssrEscape(_vm._s(attendant.name))+"</span></div></a></li>")})))])};
+var __vue_render__ = function (_h,_vm) {var _c=_vm._c;return _c('ul',{staticClass:"vsc-popup-body__list"},[_vm._ssrNode((_vm._ssrList((_vm.props.attendants),function(attendant,index){return ("<li class=\"vsc-popup-body__list-item\"><a"+(_vm._ssrAttr("href",attendant.href))+" rel=\"noopener noreferer\" target=\"_blank\""+(_vm._ssrAttr("aria-label",("Contact " + (attendant.name) + ", opens in a new window")))+" class=\"vsc-popup-body__link\"><div class=\"vsc-popup-body__link-avatar\"><img"+(_vm._ssrAttr("src",attendant.avatar.src))+(_vm._ssrAttr("alt",attendant.avatar.alt))+"> <span class=\"vsc-popup-body__link-avatar-brand\""+(_vm._ssrStyle(null,attendant.app ? ("background-image: url(" + (_vm.props.urlAssets) + "/" + (attendant.app) + ".png)") : '', null))+"></span></div> <div class=\"vsc-popup-body__link-info\"><span class=\"vsc-popup-body__link-info__label\">"+_vm._ssrEscape(_vm._s(attendant.label))+"</span> <span class=\"vsc-popup-body__link-info__name\">"+_vm._ssrEscape(_vm._s(attendant.name))+"</span></div></a></li>")})))])};
 var __vue_staticRenderFns__ = [];
 
   /* style */
@@ -146,7 +146,7 @@ var __vue_staticRenderFns__ = [];
   /* scoped */
   var __vue_scope_id__ = undefined;
   /* module identifier */
-  var __vue_module_identifier__ = "data-v-3ba3570e";
+  var __vue_module_identifier__ = "data-v-2be04e94";
   /* functional template */
   var __vue_is_functional_template__ = true;
   /* style inject */

@@ -19,7 +19,7 @@
           >
           <span
             class="vsc-popup-body__link-avatar-brand"
-            :style="attendant.app ? `background-image: url(${props.urlAsset}/${attendant.app}.png)` : ''"
+            :style="attendant.app ? `background-image: url(${props.urlAssets}/${attendant.app}.png)` : ''"
           />
         </div>
         <div class="vsc-popup-body__link-info">
