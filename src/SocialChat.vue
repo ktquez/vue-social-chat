@@ -56,12 +56,15 @@
             >
           </slot>
         </span>
-        <img
-          v-show="show && icon"
-          :src="`${urlAssets}/icons/close.svg`"
-          alt="close icon"
-          aria-hidden="true"
-        >
+        <span v-show="show && icon">
+          <slot name="button-close">
+            <img
+              :src="`${urlAssets}/icons/close.svg`"
+              alt="close icon"
+              aria-hidden="true"
+            >
+          </slot>
+        </span>
       </button>
     </div>
   </FocusLoop>
