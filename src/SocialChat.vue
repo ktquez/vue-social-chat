@@ -19,10 +19,17 @@
           </div>
           <div class="vsc-popup-body">
             <slot name="body">
-              <ListChat
-                :url-assets="urlAssets"
-                :attendants="getAttendants"
-              />
+              <template v-if="urlAssets === defaultAssetsPath">
+                <ListChat
+                  :attendants="getAttendants"
+                />
+              </template>
+              <template v-else>
+                <ListChat
+                  :url-assets="urlAssets"
+                  :attendants="getAttendants"
+                />
+              </template>
             </slot>
           </div>
           <div
@@ -106,7 +113,8 @@ export default {
   },
 
   data: () => ({
-    show: false
+    show: false,
+    defaultAssetsPath: URL_ASSETS_ICONS
   }),
 
   computed: {
