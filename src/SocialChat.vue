@@ -20,7 +20,7 @@
           <div class="vsc-popup-body">
             <slot name="body">
               <ListChat
-                :url-asset="urlAssets"
+                :url-assets="urlAssets"
                 :attendants="getAttendants"
               />
             </slot>
