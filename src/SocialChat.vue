@@ -50,7 +50,7 @@
             :open="show"
           >
             <img
-              :src="`${urlAssets}/icons/chat.svg`"
+              :src="`${urlAssets}/chat.svg`"
               alt="chat icon"
               aria-hidden="true"
             >
@@ -59,7 +59,7 @@
         <span v-show="show && icon">
           <slot name="button-close">
             <img
-              :src="`${urlAssets}/icons/close.svg`"
+              :src="`${urlAssets}/close.svg`"
               alt="close icon"
               aria-hidden="true"
             >
@@ -73,7 +73,7 @@
 <script>
 import ListChat from './ListChat.vue'
 import { FocusLoop } from '@vue-a11y/focus-loop'
-import { URL_ASSETS, HREF_BY_APP } from './constants'
+import { HREF_BY_APP } from './constants'
 
 export default {
   name: 'VueSocialChat',
@@ -97,12 +97,16 @@ export default {
     dir: {
       type: String,
       default: 'ltr'
+    },
+
+    urlAssets: {
+      type: String,
+      default: 'https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src/icons'
     }
   },
 
   data: () => ({
-    show: false,
-    urlAssets: URL_ASSETS
+    show: false
   }),
 
   computed: {

@@ -7,7 +7,7 @@
     >
       <a
         :href="attendant.href"
-        rel="noopener"
+        rel="noopener noreferer"
         target="_blank"
         class="vsc-popup-body__link"
         :aria-label="`Contact ${attendant.name}, opens in a new window`"
@@ -19,7 +19,7 @@
           >
           <span
             class="vsc-popup-body__link-avatar-brand"
-            :style="attendant.app ? `background-image: url(${props.urlAsset}/logos/${attendant.app}.png)` : ''"
+            :style="attendant.app ? `background-image: url(${props.urlAsset}/${attendant.app}.png)` : ''"
           />
         </div>
         <div class="vsc-popup-body__link-info">
@@ -42,7 +42,10 @@ export default {
   name: 'ListChat',
 
   props: {
-    urlAsset: String,
+    urlAssets: {
+      type: String,
+      default: 'https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src/logos'
+    },
     attendants: {
       type: Array,
       default: () => ([])
