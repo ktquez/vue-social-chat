@@ -1,4 +1,5 @@
-export const URL_ASSETS = 'https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src'
+export const URL_ASSETS_LOGOS = 'https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src/logos'
+export const URL_ASSETS_ICONS = 'https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src/icons'
 
 export const HREF_BY_APP = {
   whatsapp: 'https://api.whatsapp.com/send?phone=%ph%&text=',

@@ -38,13 +38,15 @@
 </template>
 
 <script>
+import { URL_ASSETS_LOGOS } from './constants'
+
 export default {
   name: 'ListChat',
 
   props: {
     urlAssets: {
       type: String,
-      default: 'https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src/logos'
+      default: URL_ASSETS_LOGOS
     },
     attendants: {
       type: Array,

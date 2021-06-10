@@ -73,7 +73,7 @@
 <script>
 import ListChat from './ListChat.vue'
 import { FocusLoop } from '@vue-a11y/focus-loop'
-import { HREF_BY_APP } from './constants'
+import { URL_ASSETS_ICONS, HREF_BY_APP } from './constants'
 
 export default {
   name: 'VueSocialChat',
@@ -101,7 +101,7 @@ export default {
 
     urlAssets: {
       type: String,
-      default: 'https://raw.githubusercontent.com/ktquez/vue-social-chat/master/src/icons'
+      default: URL_ASSETS_ICONS
     }
   },
 
