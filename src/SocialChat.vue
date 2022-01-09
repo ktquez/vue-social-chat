@@ -19,10 +19,17 @@
           </div>
           <div class="vsc-popup-body">
             <slot name="body">
-              <ListChat
-                :url-asset="urlAssets"
-                :attendants="getAttendants"
-              />
+              <template v-if="urlAssets === defaultAssetsPath">
+                <ListChat
+                  :attendants="getAttendants"
+                />
+              </template>
+              <template v-else>
+                <ListChat
+                  :url-assets="urlAssets"
+                  :attendants="getAttendants"
+                />
+              </template>
             </slot>
           </div>
           <div
@@ -50,18 +57,21 @@
             :open="show"
           >
             <img
-              :src="`${urlAssets}/icons/chat.svg`"
+              :src="`${urlAssets}/chat.svg`"
               alt="chat icon"
               aria-hidden="true"
             >
           </slot>
         </span>
-        <img
-          v-show="show && icon"
-          :src="`${urlAssets}/icons/close.svg`"
-          alt="close icon"
-          aria-hidden="true"
-        >
+        <span v-show="show && icon">
+          <slot name="button-close">
+            <img
+              :src="`${urlAssets}/close.svg`"
+              alt="close icon"
+              aria-hidden="true"
+            >
+          </slot>
+        </span>
       </button>
     </div>
   </FocusLoop>
@@ -70,7 +80,7 @@
 <script>
 import ListChat from './ListChat.vue'
 import { FocusLoop } from '@vue-a11y/focus-loop'
-import { URL_ASSETS, HREF_BY_APP } from './constants'
+import { URL_ASSETS_ICONS, HREF_BY_APP } from './constants'
 
 export default {
   name: 'VueSocialChat',
@@ -94,12 +104,17 @@ export default {
     dir: {
       type: String,
       default: 'ltr'
+    },
+
+    urlAssets: {
+      type: String,
+      default: URL_ASSETS_ICONS
     }
   },
 
   data: () => ({
     show: false,
-    urlAssets: URL_ASSETS
+    defaultAssetsPath: URL_ASSETS_ICONS
   }),
 
   computed: {
