@@ -53,36 +53,24 @@
   </VueSocialChat>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 
-export default {
-  name: 'WhatsAppPage',
-  setup () {
-    const newsletter = ref({
-      name: '',
-      email: ''
-    })
-    const subscribed = ref(false)
+const newsletter = ref({
+  name: '',
+  email: ''
+})
+const subscribed = ref(false)
 
-    function send () {
-      subscribed.value = true
-    }
+function send () {
+  subscribed.value = true
+}
 
-    function resetForm () {
-      setTimeout(() => {
-        newsletter.value = { name: '', email: '' }
-        subscribed.value = false
-      }, 500)
-    }
-
-    return {
-      newsletter,
-      subscribed,
-      send,
-      resetForm
-    }
-  }
+function resetForm () {
+  setTimeout(() => {
+    newsletter.value = { name: '', email: '' }
+    subscribed.value = false
+  }, 500)
 }
 </script>
 

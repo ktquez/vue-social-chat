@@ -97,7 +97,7 @@ const vscButton = ref(null)
 
 const ariaLabelButton = computed(() => `${show ? 'Close' : 'Open'} social chat popup`)
 
-const getAttendants = computed(() => this.attendants.map((attendant) => {
+const getAttendants = computed(() => attendants.map((attendant) => {
   const href = attendant.app ? HREF_BY_APP[attendant.app].replace('%ph%', (attendant.number || attendant.id || attendant.username)) : attendant.href
   return { ...attendant, href }
 }))
