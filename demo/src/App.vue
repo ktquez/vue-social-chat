@@ -1,3 +1,7 @@
+<script setup>
+import NavList from './components/NavList.vue'
+</script>
+
 <template>
   <header>
     <router-link to="/" aria-label="Go to home page">
@@ -20,18 +24,6 @@
     <router-view/>
   </main>
 </template>
-
-<script>
-import { defineComponent } from 'vue'
-import NavList from './components/NavList.vue'
-
-export default defineComponent({
-  name: 'App',
-  components: {
-    'nav-list': NavList
-  }
-})
-</script>
 
 <style lang="stylus">
 #app

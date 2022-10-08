@@ -23,46 +23,39 @@
   </VueSocialChat>
 </template>
 
-<script>
-export default {
-  name: 'WeChatPage',
-  setup () {
-    const attendants = [
-      {
-        app: 'wechat',
-        label: 'Support',
-        name: 'Alan Ktquez',
-        id: '111',
-        avatar: {
-          src: 'https://avatars.githubusercontent.com/u/8084606?v=4',
-          alt: 'Alan Ktquez avatar'
-        }
-      },
-      {
-        app: 'wechat',
-        label: 'Sales',
-        name: 'Alexia Chapman',
-        id: '111',
-        avatar: {
-          src: 'https://randomuser.me/api/portraits/women/63.jpg',
-          alt: 'Alexia Chapman avatar'
-        }
-      },
-      {
-        app: 'wechat',
-        label: 'Developer',
-        name: 'Lucas Lima',
-        id: '777',
-        avatar: {
-          src: 'https://avatars.githubusercontent.com/u/40927839?v=4',
-          alt: 'Lucas Lima avatar'
-        }
-      }
-    ]
-
-    return { attendants }
+<script setup>
+const attendants = [
+  {
+    app: 'wechat',
+    label: 'Support',
+    name: 'Alan Ktquez',
+    id: '111',
+    avatar: {
+      src: 'https://avatars.githubusercontent.com/u/8084606?v=4',
+      alt: 'Alan Ktquez avatar'
+    }
+  },
+  {
+    app: 'wechat',
+    label: 'Sales',
+    name: 'Alexia Chapman',
+    id: '111',
+    avatar: {
+      src: 'https://randomuser.me/api/portraits/women/63.jpg',
+      alt: 'Alexia Chapman avatar'
+    }
+  },
+  {
+    app: 'wechat',
+    label: 'Developer',
+    name: 'Lucas Lima',
+    id: '777',
+    avatar: {
+      src: 'https://avatars.githubusercontent.com/u/40927839?v=4',
+      alt: 'Lucas Lima avatar'
+    }
   }
-}
+]
 </script>
 
 <style lang="stylus">
