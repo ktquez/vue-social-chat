@@ -67,95 +67,70 @@
   </FocusLoop>
 </template>
 
-<script>
-import { defineComponent, onBeforeUnmount, ref, watch } from 'vue'
+<script setup>
+import { computed, onBeforeUnmount, ref, watch, defineEmits } from 'vue'
 import ListChat from './ListChat.vue'
 import { FocusLoop } from '@vue-a11y/focus-loop'
 import { URL_ASSETS, HREF_BY_APP } from '../constants'
 
-export default defineComponent({
-  name: 'VueSocialChat',
+const emit = defineEmits(['open', 'close'])
 
-  components: {
-    ListChat,
-    FocusLoop
+defineProps({
+  icon: {
+    type: Boolean,
+    default: false
   },
-
-  props: {
-    icon: {
-      type: Boolean,
-      default: false
-    },
-
-    attendants: {
-      type: Array,
-      default: () => ([])
-    },
-
-    dir: {
-      type: String,
-      default: 'ltr'
-    }
+  attendants: {
+    type: Array,
+    default: () => ([])
   },
-
-  computed: {
-    ariaLabelButton () {
-      return `${this.show ? 'Close' : 'Open'} social chat popup`
-    },
-
-    getAttendants () {
-      return this.attendants.map((attendant) => {
-        const href = attendant.app ? HREF_BY_APP[attendant.app].replace('%ph%', (attendant.number || attendant.id || attendant.username)) : attendant.href
-        return { ...attendant, href }
-      })
-    }
-  },
-
-  setup(_, { emit }) {
-    const show = ref(false)
-    const urlAssets = ref(URL_ASSETS)
-    const vscPopup = ref(null)
-    const vscButton = ref(null)
-
-    onBeforeUnmount (() => {
-      removeEventListeners()
-    })
-
-    watch(show, (val) => {
-      if (!val) return removeEventListeners()
-      document.addEventListener('click', closeClickOutside)
-      document.addEventListener('keydown', closeKeydownEsc)
-    })
-
-    function togglePopup () {
-      show.value = !show.value
-      setTimeout(() => vscButton.value.blur(), 500)
-      if (!show) return emit('close')
-      emit('open')
-    }
-
-    function closeClickOutside ({ target }) {
-      if (!vscPopup.value.contains(target)) togglePopup()
-    }
-
-    function closeKeydownEsc ({ which }) {
-      if (which === 27) togglePopup()
-    }
-
-    function removeEventListeners () {
-      document.removeEventListener('click', closeClickOutside)
-      document.removeEventListener('keydown', closeKeydownEsc)
-    }
-
-    return {
-      show,
-      urlAssets,
-      vscPopup,
-      vscButton,
-      togglePopup
-    }
+  dir: {
+    type: String,
+    default: 'ltr'
   }
+});
+
+const show = ref(false)
+const urlAssets = ref(URL_ASSETS)
+const vscPopup = ref(null)
+const vscButton = ref(null)
+
+const ariaLabelButton = computed(() => `${show ? 'Close' : 'Open'} social chat popup`)
+
+const getAttendants = computed(() => attendants.map((attendant) => {
+  const href = attendant.app ? HREF_BY_APP[attendant.app].replace('%ph%', (attendant.number || attendant.id || attendant.username)) : attendant.href
+  return { ...attendant, href }
+}))
+
+onBeforeUnmount (() => {
+  removeEventListeners()
 })
+
+watch(show, (val) => {
+  if (!val) return removeEventListeners()
+  document.addEventListener('click', closeClickOutside)
+  document.addEventListener('keydown', closeKeydownEsc)
+})
+
+function togglePopup () {
+  show.value = !show.value
+  setTimeout(() => vscButton.value.blur(), 500)
+  if (!show) return emit('close')
+  emit('open')
+}
+
+function closeClickOutside ({ target }) {
+  if (!vscPopup.value.contains(target)) togglePopup()
+}
+
+function closeKeydownEsc ({ which }) {
+  if (which === 27) togglePopup()
+}
+
+function removeEventListeners () {
+  document.removeEventListener('click', closeClickOutside)
+  document.removeEventListener('keydown', closeKeydownEsc)
+}
 </script>
 
 <style lang="stylus">

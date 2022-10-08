@@ -19,46 +19,39 @@
   </VueSocialChat>
 </template>
 
-<script>
-export default {
-  name: 'TelegramPage',
-  setup () {
-    const attendants = [
-      {
-        app: 'telegram',
-        label: 'Support',
-        name: 'Alan Ktquez',
-        username: 'ktquez',
-        avatar: {
-          src: 'https://avatars.githubusercontent.com/u/8084606?v=4',
-          alt: 'Alan Ktquez avatar'
-        }
-      },
-      {
-        app: 'telegram',
-        label: 'Sales',
-        name: 'Alexia Chapman',
-        username: 'pombo',
-        avatar: {
-          src: 'https://randomuser.me/api/portraits/women/63.jpg',
-          alt: 'Alexia Chapman avatar'
-        }
-      },
-      {
-        app: 'telegram',
-        label: 'Developer',
-        name: 'Lucas Lima',
-        username: 'lucasferreiralimax',
-        avatar: {
-          src: 'https://avatars.githubusercontent.com/u/40927839?v=4',
-          alt: 'Lucas Lima avatar'
-        }
-      }
-    ]
-
-    return { attendants }
+<script setup>
+const attendants = [
+  {
+    app: 'telegram',
+    label: 'Support',
+    name: 'Alan Ktquez',
+    username: 'ktquez',
+    avatar: {
+      src: 'https://avatars.githubusercontent.com/u/8084606?v=4',
+      alt: 'Alan Ktquez avatar'
+    }
+  },
+  {
+    app: 'telegram',
+    label: 'Sales',
+    name: 'Alexia Chapman',
+    username: 'pombo',
+    avatar: {
+      src: 'https://randomuser.me/api/portraits/women/63.jpg',
+      alt: 'Alexia Chapman avatar'
+    }
+  },
+  {
+    app: 'telegram',
+    label: 'Developer',
+    name: 'Lucas Lima',
+    username: 'lucasferreiralimax',
+    avatar: {
+      src: 'https://avatars.githubusercontent.com/u/40927839?v=4',
+      alt: 'Lucas Lima avatar'
+    }
   }
-}
+]
 </script>
 
 <style lang="stylus">

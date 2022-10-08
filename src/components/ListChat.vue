@@ -1,4 +1,14 @@
-<template functional>
+<script setup>
+  defineProps({
+    urlAsset: String,
+    attendants: {
+      type: Array,
+      default: () => ([])
+    }
+  });
+</script>
+
+<template>
   <ul class="vsc-popup-body__list">
     <li
       v-for="(attendant, index) in attendants"
@@ -36,18 +46,3 @@
     </li>
   </ul>
 </template>
-
-<script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'ListChat',
-  props: {
-    urlAsset: String,
-    attendants: {
-      type: Array,
-      default: () => ([])
-    }
-  }
-})
-</script>
